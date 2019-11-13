@@ -55,6 +55,18 @@
             {{ email }}
           </IconInfo>
         </section>
+        <section v-if="website">
+          <IconInfo
+            class="info-website"
+            type="website"
+            :href="`${website}`"
+            :target="_blank"
+            :title="website"
+          >
+            {{ website }}
+          </IconInfo>
+        </section>
+
       </section>
     </div>
 
@@ -96,7 +108,7 @@ export default {
 
   computed: {
     info () {
-      return this.$themeConfig.personalInfo || {}
+      return this.$frontmatter.personalInfo || this.$themeConfig.personalInfo || {}
     },
 
     nickname () {
@@ -117,6 +129,9 @@ export default {
 
     organization () {
       return this.info.organization || null
+    },
+    website () {
+      return this.info.website || null
     },
 
     avatar () {
@@ -160,6 +175,17 @@ export default {
     gpImg () {
       return GeoPattern.generate(this.nickname, { color: '#eee' }).toDataUrl()
     },
+  },
+  created() {
+    console.log('created called.', new Date(), this.$frontmatter );
+    this.$frontmatter.personalInfo = {
+      nickname: this.$frontmatter.performers || null,
+      website: this.$frontmatter.websiteUrl || null,
+      email: this.$frontmatter.email || null,
+      //description: this.$frontmatter.dozentenbeschreibung || null,
+
+    }
+    console.log(222);
   },
 }
 </script>

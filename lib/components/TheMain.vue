@@ -105,6 +105,7 @@ export default {
     @media (max-width $MQMobile - 1px)
       .main
         width 100%
-      .aside
-        display none
+      //.aside
+        //max-width: 300px
+
 </style>
