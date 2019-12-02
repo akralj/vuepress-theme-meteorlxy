@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <div class="banner" v-bind:class="layoutClass">
     <div class="container">
       <div class="center">
         <slot />
@@ -11,6 +11,14 @@
 <script>
 export default {
   name: 'TheHeaderBanner',
+  created() {
+    console.log('created called.', new Date(), this.$frontmatter.layout);
+  },
+  computed: {
+    layoutClass: function() {
+      return this.$frontmatter.layout;
+    }
+  }
 }
 </script>
 
@@ -33,4 +41,8 @@ export default {
       transition all 0.2s ease-in-out
       &:hover
         transform scale(1.2)
+
+.banner.Home
+  height $bannerHeight*3
+
 </style>
