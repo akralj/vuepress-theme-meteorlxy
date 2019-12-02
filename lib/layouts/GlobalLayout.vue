@@ -1,5 +1,5 @@
 <template>
-  <div id="vuepress-theme-meteorlxy">
+  <div id="vuepress-theme-meteorlxy" :class="layoutClass">
     <TheHeader />
 
     <TheMain />
@@ -21,6 +21,13 @@ export default {
     TheMain,
     TheFooter,
   },
+
+  computed: {
+    layoutClass () {
+      return "layout-" + this.$frontmatter.layout;
+    }
+  }
+
 }
 </script>
 
