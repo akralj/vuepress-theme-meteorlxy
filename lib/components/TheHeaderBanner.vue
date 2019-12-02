@@ -12,7 +12,7 @@
 export default {
   name: 'TheHeaderBanner',
   created() {
-    console.log('created called.', new Date(), this.$frontmatter.layout);
+    //console.log('created called.', new Date(), this.$frontmatter.layout);
   },
   computed: {
     layoutClass: function() {
@@ -43,6 +43,6 @@ export default {
         transform scale(1.2)
 
 .banner.Home
-  height $bannerHeight*3
+  height $bannerHeight * 3
 
 </style>

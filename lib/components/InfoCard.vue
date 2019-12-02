@@ -177,7 +177,7 @@ export default {
     },
   },
   created() {
-    console.log('created called.', new Date(), this.$frontmatter );
+    //console.log('created called.', new Date(), this.$frontmatter );
     this.$frontmatter.personalInfo = {
       nickname: this.$frontmatter.performers || null,
       website: this.$frontmatter.websiteUrl || null,
