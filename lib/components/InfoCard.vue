@@ -185,7 +185,6 @@ export default {
       //description: this.$frontmatter.dozentenbeschreibung || null,
 
     }
-    console.log(222);
   },
 }
 </script>
