@@ -60,7 +60,7 @@
             class="info-website"
             type="website"
             :href="`${website}`"
-            :target="_blank"
+            target="_blank"
             :title="website"
           >
             {{ website }}
